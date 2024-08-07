@@ -1,4 +1,4 @@
-package com.winesales.salesmanager.service.impl;
+package com.winesales.salesmanager.config;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -18,16 +18,16 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
-public class DataInitializerService implements CommandLineRunner {
+public class DataLoader implements CommandLineRunner {
 
     private final ProdutoRepository produtoRepository;
     private final ClienteRepository clienteRepository;
     private final CompraRepository compraRepository;
 
     @Autowired
-    public DataInitializerService(ProdutoRepository produtoRepository,
-                                  ClienteRepository clienteRepository,
-                                  CompraRepository compraRepository) {
+    public DataLoader(ProdutoRepository produtoRepository,
+                      ClienteRepository clienteRepository,
+                      CompraRepository compraRepository) {
         this.produtoRepository = produtoRepository;
         this.clienteRepository = clienteRepository;
         this.compraRepository = compraRepository;
